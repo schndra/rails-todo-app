@@ -1,0 +1,28 @@
+<div id="<%= dom_id todo %>" class="flex justify-between items-center">
+  <% if todo.isChecked %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <span class="line-through">
+    <%= todo.title %>
+    </span>
+  </p>
+
+  <% else %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= todo.title %>
+  </p>
+
+  <% end %>
+
+
+ 
+
+  <% if action_name != "show" %>
+ <div class="flex gap-x-4">
+    <%= link_to "Show this todo", todo, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this todo", edit_todo_path(todo), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+ </div>
+  <% end %>
+</div>
